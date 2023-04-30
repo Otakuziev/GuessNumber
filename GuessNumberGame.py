@@ -28,6 +28,14 @@ def guessNumber():
 			print("Too low!")
 			attempts -= 1
 			print(f"You have {attempts} remaining!")
+			if attempts == 0:
+				print("You lose :)!")
+				newGame = input("Do you want to play again? Type 'y' to start new game, or type 'n' to finish: ")
+				if newGame == 'y':
+					clear()
+					guessNumber()
+				else:
+					break
 		elif userNumber > computerNumber:
 			print("Too high!")
 			attempts -= 1
